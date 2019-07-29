@@ -12,3 +12,9 @@
 */
 
 Route::get('/', 'InicioController@index');
+//Route::get('admin/permiso', 'admin\PermisoControler@index')->name('permiso'); //se puede realizar chache de esta forma
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+    Route::get('permiso', 'PermisoController@index')->name('permiso');
+    Route::get('permiso/crear', 'PermisoController@crear')->name('crear_permiso');
+
+});
