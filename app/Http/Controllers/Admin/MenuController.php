@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Menu;
 
 class MenuController extends Controller
 {
@@ -24,7 +25,7 @@ class MenuController extends Controller
      */
     public function crear()
     {
-        //
+        return view('admin.menu.crear');
     }
 
     /**
@@ -35,7 +36,7 @@ class MenuController extends Controller
      */
     public function guardar(Request $request)
     {
-        //
+        Menu::create($request->all());
     }
 
     /**
