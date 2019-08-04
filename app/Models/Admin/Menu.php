@@ -9,8 +9,11 @@ class Menu extends Model
     protected $table = "menu";
     protected $fillable = ['nombre','url','icono'];     //crear los campos masivos de la ddbb del modelo
     protected $guarded =['id'];                         //campos que no pueden ser guardados
-    // public $timestamps =false;
-                         //campo que no se van a usar
+    // public $timestamps =false; //campo que no se van a usar
+    public function roles()
+    {
+        return $this->belongsToMany(Rol::class, 'menu_rol');
+    }
     public function getHijos($padres, $line)
     {
         $children =[];

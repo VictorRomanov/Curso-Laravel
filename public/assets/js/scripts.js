@@ -1,5 +1,6 @@
+/* Boton Borrar Campos De Formulario*/
 $(document).ready(function() {
-    //Cerrar las alertas Automaticamente
+    //Cerrar Las Alertas Automaticamente
     $('.alert[data-auto-dismiss]').each(function(index, element) {
         const $element = $(element),
             timeout = $element.data('auto-dismiss') || 5000;
@@ -7,12 +8,13 @@ $(document).ready(function() {
             $element.alert('close');
         }, timeout);
     });
-    //ToolTips
+    //TOOLTIPS
     $('body').tooltip({
         trigger: 'hover',
-        selector: 'tooltipsC',
+        selector: '.tooltipsC',
         placement: 'top',
         html: true,
         container: 'body'
     });
+    $('ul.sidebar-menu').find('li.active').parents('li').addClass('active');
 });

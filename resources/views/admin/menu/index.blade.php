@@ -3,13 +3,13 @@
     Menú
 @endsection
 @section('styles')
-    <link href="{{asset("assets/js/jquery-nestable/jquery.nestable.css")}}" rel="stylesheet" type="text/css">
+    <link href="{{asset("assets\js\jquery-nestable\jquery.nestable.css")}}" rel="stylesheet" type="text/css">
 @endsection
 @section('scriptPlugins')
-    <script src="{{asset("assets/js/jquery-nestable/jquery.nestable.js")}}" type="text/javascript"></script>
+    <script src="{{asset("assets\js\jquery-nestable\jquery.nestable.js")}}" type="text/javascript"></script>
 @endsection
 @section('scripts')
-    <script src="{{asset("assets/pages/scripts/admin/menu/index.js")}}" type="text/javascript"></script>
+    <script src="{{asset("assets\pages\scripts\admin\menu\index.js")}}" type="text/javascript"></script>
 @endsection
 @section('contenido')
     <div class="row">

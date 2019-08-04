@@ -14,6 +14,8 @@
 Route::get('/', 'InicioController@index');
 //Route::get('admin/permiso', 'admin\PermisoControler@index')->name('permiso'); //se puede realizar chache de esta forma
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+    /* Inicio Sesion */
+    Route::get('', 'AdminController@index');
     //permisos
     Route::get('permiso', 'PermisoController@index')->name('permiso');
     Route::get('permiso/crear', 'PermisoController@crear')->name('crear_permiso');
@@ -29,4 +31,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post('rol','RolController@guardar')->name('guardar_rol');
     Route::put('rol/{id}','RolController@actualizar')->name('actualizar_rol');
     Route::delete('rol/{id}', 'RolController@eliminar')->name('eliminar_rol');
+    /* Rutas Menu Rol*/
+    Route::get('menu-rol','MenuRolController@index')->name('menu-rol');
+    Route::post('menu-rol', 'MenuRolController@guardar')->name('guardar_menu_rol');
 });

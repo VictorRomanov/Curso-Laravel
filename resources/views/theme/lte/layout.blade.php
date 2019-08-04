@@ -17,10 +17,11 @@
         <!-- AdminLTE Skins. Choose a skin from the css/skins
                folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/skins/_all-skins.min.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/css/custom.css")}}">
-        <link href="cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-        
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
         @yield('styles')
+        <link rel="stylesheet" href="{{asset("assets/css/custom.css")}}">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -62,12 +63,12 @@
         <!-- AdminLTE App -->
         <script src="{{asset("assets/$theme/dist/js/adminlte.min.js")}}"></script>
         @yield('scriptPlugins')
-        <script src="{{asset("assets/js/JQuery-validation/jquery.validate.min.js")}}"></script>
-        <script src="{{asset("assets/js/JQuery-validation/localization/messages_es.min.js")}}"></script>
+        <script src="{{asset("assets/js/jquery-validation/jquery.validate.min.js")}}"></script>
+        <script src="{{asset("assets/js/jquery-validation/localization/messages_es.min.js")}}"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
         <script src="{{asset("assets/js/scripts.js")}}"></script>
         <script src="{{asset("assets/js/funciones.js")}}"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script src="cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
         <!-- AdminLTE for demo purposes -->
         {{-- <script src="{{asset("assets/$theme/dist/js/demo.js")}}"></script> --}}

@@ -18,9 +18,8 @@ class RolController extends Controller
     public function index()
     {
         $datas = Rol::orderBy('id')->get();
-        return view('admin.rol.index',compact('datas'));
+        return view('admin.rol.index', compact('datas'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -28,9 +27,8 @@ class RolController extends Controller
      */
     public function crear()
     {
-       return view('admin.rol.crear');
+        return view('admin.rol.crear');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -40,20 +38,8 @@ class RolController extends Controller
     public function guardar(ValidacionRol $request)
     {
         Rol::create($request->all());
-        return redirect("admin/rol")->with('mensaje','Rol Creado con Exito');
+        return redirect('admin/rol')->with('mensaje', 'Rol creado con exito');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function mostrar($id)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -62,10 +48,9 @@ class RolController extends Controller
      */
     public function editar($id)
     {
-        $data = Rol::findorFail($id);
+        $data = Rol::findOrFail($id);
         return view('admin.rol.editar', compact('data'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -75,10 +60,9 @@ class RolController extends Controller
      */
     public function actualizar(ValidacionRol $request, $id)
     {
-        Rol::findorFail($id)->update($request->all());
-        return redirect("admin/rol")->with('mensaje','Rol Actualizado con Exito');
+        Rol::findOrFail($id)->update($request->all());
+        return redirect('admin/rol')->with('mensaje', 'Rol actualizado con exito');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -88,19 +72,13 @@ class RolController extends Controller
     public function eliminar(Request $request, $id)
     {
         if ($request->ajax()) {
-            if(Rol::destroy($id))
-            {
+            if (Rol::destroy($id)) {
                 return response()->json(['mensaje' => 'ok']);
-            }
-            else
-            {
+            } else {
                 return response()->json(['mensaje' => 'ng']);
             }
-        }
-        else
-        {
+        } else {
             abort(404);
         }
-
     }
 }
