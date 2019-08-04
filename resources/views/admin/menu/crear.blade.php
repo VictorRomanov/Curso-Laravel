@@ -3,7 +3,7 @@
     Crear Menús
 @endsection
 @section('scripts')
-<script src="{{asset("assets/page/scripts/admin/crear.js)}}" type="text/javascript"></script>
+    <script src="{{asset("assets/pages/scripts/admin/menu/crear.js")}}" type="text/javascript"></script>
 @endsection
 @section('contenido')
     <div class="row">
@@ -15,7 +15,7 @@
                     <h3 class="box-title">Crear Menú</h3>
                 </div>
                 <!-- /.box-header -->
-            <form action="{{route('guardar_menu')}}" id="form-general" class="form-horizontal" method="POST">
+            <form action="{{route('guardar_menu')}}" id="form-general" class="form-horizontal" method="POST" autocomplete="off">
                 @csrf
                 <div class="box-body">
                     @include('admin.menu.form')
