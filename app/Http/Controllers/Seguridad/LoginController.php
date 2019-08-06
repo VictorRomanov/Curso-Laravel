@@ -10,6 +10,18 @@ class LoginController extends Controller
 {
     use AuthenticatesUsers;
     protected $redirectTo = '/admin';
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+
+    public function username()
+    {
+        return 'usuario';
+    }
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +29,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        //
+        return view('seguridad.index');
     }
 
     /**

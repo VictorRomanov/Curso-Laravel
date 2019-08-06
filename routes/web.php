@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', 'InicioController@index');
+Route::get('/', 'InicioController@index')->name('inicio');
+Route::get('seguridad/login', 'Seguridad\LoginController@index')->name('login');
+Route::post('seguridad/login', 'Seguridad\LoginController@login')->name('login_post');
 //Route::get('admin/permiso', 'admin\PermisoControler@index')->name('permiso'); //se puede realizar chache de esta forma
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
     /* Inicio Sesion */
+
     Route::get('', 'AdminController@index');
     //permisos
     Route::get('permiso', 'PermisoController@index')->name('permiso');
